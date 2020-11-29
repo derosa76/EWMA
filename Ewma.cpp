@@ -16,7 +16,7 @@ void Ewma::reset() {
 
 double Ewma::filter(double input) {
 	if (hasInitial) {
-		output = alpha * (input - output) + output;
+		if (input!=input) output = alpha * (input - output) + output;
 	} else {
 		output = input;
 		hasInitial = true;
